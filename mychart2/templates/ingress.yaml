@@ -1,0 +1,33 @@
+kind: Ingress
+
+metadata:
+
+  name: shopfront-service
+
+  annotations:
+
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+spec:
+
+  ingressClassName: ingress-xyz
+
+  rules:
+
+  - http:
+
+      paths:
+
+      - path: ./
+
+        pathType: Prefix
+
+        backend:
+
+          service:
+
+            name: test2
+
+            port:
+
+              number: 8010
